@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from "react-dom";
-import Account from "./components/Account";
+import AccountsList from "./components/AccountsList.component";
+
 
 function Popup() {
   return (
     <div>
-      <Account />
+      <AccountsList />
     </div>
   );
 }
