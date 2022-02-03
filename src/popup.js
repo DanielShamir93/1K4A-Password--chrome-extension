@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from "react-dom";
+import Account from "./components/Account";
 
 function Popup() {
   return (
     <div>
-      wow
+      <Account />
     </div>
   );
 }
