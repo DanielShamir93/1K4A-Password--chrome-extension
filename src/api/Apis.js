@@ -4,10 +4,6 @@ const PORT = 8080;
 
 let myUrl = `http://localhost:${PORT}/`;
 
-// if (process.env.NODE_ENV === "production") {
-//   myUrl = "/";
-// }
-
 const myApi = axios.create({
   baseURL: myUrl,
 });

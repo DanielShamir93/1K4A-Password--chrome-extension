@@ -3,12 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, './src'),
-  //   historyApiFallback: true
-  // },
   entry: {
     popup: "./src/popup.js",
+    background: "./src/background.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
