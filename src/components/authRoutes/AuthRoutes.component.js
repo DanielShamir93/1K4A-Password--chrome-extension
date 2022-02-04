@@ -5,7 +5,7 @@ import Home from "../home/Home.component";
 export default function AuthRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/popup.html" element={<Home />} />
     </Routes>
   );
 }
