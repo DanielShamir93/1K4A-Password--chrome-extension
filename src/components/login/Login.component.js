@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import myApi from "../../api/Apis";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
@@ -23,6 +25,7 @@ export default function Login() {
             console.log(JSON.stringify(loggedInUser));
           });
 
+          navigate('/popup.html'); // For when logging-in change the url endpoint
         });
       
     } catch (err) {
