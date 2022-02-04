@@ -5,7 +5,7 @@ import Account from "../account/account.component";
 export default function AccountsList() {
 
   const [accounts, setAccounts] = useState([]);
-  const [accountSelected, setAccountSelected] = useState({});
+  const [accountSelectedName, setAccountSelectedName] = useState("select-account");
 
   useEffect(() => {
     chrome.storage.sync.get("loggedInUser", function(result) {
@@ -35,12 +35,13 @@ export default function AccountsList() {
     return (
       <select 
         className="accounts-dropdown"
-        onChange={(e) => {setAccountSelected(e.target.value)}}
-        value={accountSelected}
+        onChange={(e) => {setAccountSelectedName(e.target.value)}}
+        value={accountSelectedName}
       >
+        <option value="select-account">Select Account</option>
         {accounts.map((account) => {
           return (
-            <option key={account._id} value={account._id}>{account.accountName}</option>
+            <option key={account._id} value={account._id}>{`${account.accountName} (${account.accountSubname})`}</option>
           );
         })}
       </select>
@@ -48,15 +49,14 @@ export default function AccountsList() {
   }
 
   const renderSelectedAccount = () => {
-    const account = accounts.filter((account) => account._id === accountSelected);
-    console.log(account)
+    const account = accounts.find((account) => account._id === accountSelectedName) || [];
     return <Account account={account} />
   }
 
   return (
-    <div>
+    <>
       {renderAccountsDropdown()}
-      {renderSelectedAccount()}
-    </div>
+      {accountSelectedName !== "select-account" && renderSelectedAccount()}
+    </>
   );
 }
