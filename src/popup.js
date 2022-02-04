@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
 import { render } from "react-dom";
 import Login from "./components/login/Login.component";
 import Home from "./components/home/Home.component";
@@ -36,9 +35,9 @@ function Popup() {
   }, [loggedInUser]);
 
   return (
-    <BrowserRouter>
+    <>
       {isAuth ? <Home /> :<Login />}
-    </BrowserRouter>
+    </>
   );
 }
 
