@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
 import { render } from "react-dom";
-import { useNavigate } from "react-router-dom";
-import Login from "./components/Login.component";
+import Login from "./components/login/Login.component";
+import Home from "./components/home/Home.component";
 import myApi from "./api/Apis";
-
 function Popup() {
   // const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(false);
@@ -36,10 +36,10 @@ function Popup() {
   }, [loggedInUser]);
 
   return (
-  <>
-    <Login />
-    {isAuth ? <div>auth</div> : <div>unauth</div>}
-  </>);
+    <BrowserRouter>
+      {isAuth ? <Home /> :<Login />}
+    </BrowserRouter>
+  );
 }
 
 render(<Popup />, document.getElementById("react-target"));
