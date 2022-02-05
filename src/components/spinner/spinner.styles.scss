@@ -1,4 +1,6 @@
 .Spinner {
+  padding: 0 20px 20px 20px;
+  height: 250px;
 
   .spinner-container {
     position: relative;
@@ -11,8 +13,8 @@
     }
 
     .loading-spinner {
-      width: 200px;
-      height: 200px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       border: 10px solid black;
       border-color: #000000 #ff5256 #f9ed52 #3c72bf;

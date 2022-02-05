@@ -11,9 +11,10 @@ function Popup() {
 
   return (
     <BrowserRouter>
-      <Suspense fallback={<Spinner />}>
+      {/* <Suspense fallback={<Spinner />}>
         <App /> 
-      </Suspense>
+      </Suspense> */}
+      <Spinner />
     </BrowserRouter>
   );
 }
