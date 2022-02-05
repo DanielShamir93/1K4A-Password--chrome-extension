@@ -48,34 +48,12 @@ export default function AccountsList() {
         };
         
         myApi("users/logout", config).then((data) => {
-          console.log(data); 
+          window.location.reload();
         });
       } catch (err) {
         console.log(err.message);
       }
     });
-  };
-
-  const renderAccountsDropdown = () => {
-    return (
-      <select
-        className="accounts-dropdown"
-        onChange={(e) => {
-          setAccountSelectedName(e.target.value);
-        }}
-        value={accountSelectedName}
-      >
-        <option value="select-account">Select Account</option>
-        {accounts.map((account) => {
-          return (
-            <option
-              key={account._id}
-              value={account._id}
-            >{`${account.accountName} (${account.accountSubname})`}</option>
-          );
-        })}
-      </select>
-    );
   };
 
   const renderSelectedAccount = () => {

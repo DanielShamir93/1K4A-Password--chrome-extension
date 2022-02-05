@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import myApi from "../../api/Apis";
 import Box from "@material-ui/core/Box";
 import BasicButton from "../basicButton/BasicButton.component";
@@ -8,7 +7,6 @@ import TextFieldInput from "../textFieldInput/TextFieldInput.component";
 import "./login.styles.scss";
 
 export default function Login() {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [comment, setComment] = useState("");
@@ -28,10 +26,8 @@ export default function Login() {
           }
 
           chrome.storage.sync.set({ loggedInUser }, function() {
-            console.log(JSON.stringify(loggedInUser));
+            window.location.reload();
           });
-
-          navigate('/popup.html'); // For when logging-in change the url endpoint
         });
       
     } catch (err) {
