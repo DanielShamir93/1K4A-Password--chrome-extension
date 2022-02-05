@@ -5,10 +5,11 @@ import Spinner from "./components/spinner/Spinner.component";
 const App = React.lazy(() => import("./components/app/app.component"));
 
 function Popup() {
+
   return (
     <BrowserRouter>
       <Suspense fallback={<Spinner />}>
-        <App />
+        <App /> 
       </Suspense>
     </BrowserRouter>
   );
