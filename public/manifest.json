@@ -7,6 +7,10 @@
     "default_popup": "popup.html",
     "default_title": "1K4A-Passwords"
   },
+  "icons": { 
+    "48": "./icons/1K4A-Passwords-48.png",
+   "128": "./icons/1K4A-Passwords-128.png" 
+  },
   "background": {
     "service_worker": "background.js"
   },
