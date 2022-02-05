@@ -66,6 +66,9 @@ export default function Login() {
           </div>
           <BasicButton label="login" variant="contained" cb={login} />
         </div>
+        <div className="to-signup">
+          {/* <a className="to-signup-text" type="_blank" href="https://one-key-for-all-paswords.herokuapp.com/">Signup</a> */}
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import myApi from "../../api/Apis";
 import Spinner from "../spinner/Spinner.component";
 
 export default function App() {
-  const [isTimesUp, setIsTimesUp] = useState(false)
+  const [isTimesUp, setIsTimesUp] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
   const loggedInUser = {};
 
@@ -13,34 +13,31 @@ export default function App() {
   const GET_METHOD = "get";
 
   useEffect(() => {
-      chrome.storage.sync.get("loggedInUser", (data) => {
-        try {
-          Object.assign(loggedInUser, data.loggedInUser);
-  
-          const ME_END_POINT_CONFIG = {
-            method: GET_METHOD,
-            headers: {
-              Authorization: `Bearer ${loggedInUser.token}`,
-            },
-          };
-          
-          myApi(ME_END_POINT, ME_END_POINT_CONFIG).then(() => {
-            setIsAuth(true);
-          });
-        } catch (err) {
-          setIsAuth(false);
-          console.log(err.message);
-        }
-      });
+    chrome.storage.sync.get("loggedInUser", (data) => {
+      try {
+        Object.assign(loggedInUser, data.loggedInUser);
+
+        const ME_END_POINT_CONFIG = {
+          method: GET_METHOD,
+          headers: {
+            Authorization: `Bearer ${loggedInUser.token}`,
+          },
+        };
+
+        myApi(ME_END_POINT, ME_END_POINT_CONFIG).then(() => {
+          setIsAuth(true);
+        });
+      } catch (err) {
+        setIsAuth(false);
+        console.log(err.message);
+      }
+    });
 
     setTimeout(() => {
-      setIsTimesUp(true)
-    }, 1000)
-    
-  }, [loggedInUser]);
+      setIsTimesUp(true);
+    }, 1000);
+  }, []);
 
-  return (
-    <> {isTimesUp ? (isAuth ? <AuthRoutes /> : <Login />) : <Spinner />} </>
-  );
+
+  return <> {isTimesUp ? isAuth ? <AuthRoutes /> : <Login /> : <Spinner />} </>;
 }
-
