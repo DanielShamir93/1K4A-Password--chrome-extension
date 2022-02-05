@@ -7,7 +7,7 @@ const App = React.lazy(() => import("./components/app/app.component"));
 function Popup() {
   return (
     <BrowserRouter>
-      <Suspense fallback={"waiting"}>
+      <Suspense fallback={<Spinner />}>
         <App />
       </Suspense>
     </BrowserRouter>

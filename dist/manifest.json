@@ -1,10 +1,11 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "1K4A-Passwords",
+  "description": "Generate and recover password via private and public keys",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "1K4A-Passwords"
   },
   "background": {
     "service_worker": "background.js"
