@@ -8,7 +8,7 @@ import "./accountsList.styles.scss";
 export default function AccountsList() {
   const [accounts, setAccounts] = useState([]);
   const [accountSelectedName, setAccountSelectedName] =
-    useState("select-account");
+    useState("");
 
   useEffect(() => {
     chrome.storage.sync.get("loggedInUser", function (result) {
@@ -78,7 +78,7 @@ export default function AccountsList() {
           accountSelectedName={accountSelectedName}
           setAccountSelectedName={setAccountSelectedName}
         />
-        {accountSelectedName !== "select-account" && renderSelectedAccount()}
+        {accountSelectedName !== "" && renderSelectedAccount()}
       </div>
     </div>
   );

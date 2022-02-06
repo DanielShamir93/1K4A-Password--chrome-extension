@@ -3,6 +3,7 @@ import Login from "../login/Login.component";
 import AuthRoutes from "../authRoutes/AuthRoutes.component";
 import myApi from "../../api/Apis";
 import Spinner from "../spinner/Spinner.component";
+import logoImg from '../../assets/images/title_logo.png';
 
 export default function App() {
   const [isTimesUp, setIsTimesUp] = useState(false);
@@ -38,6 +39,10 @@ export default function App() {
     }, 1000);
   }, []);
 
-
-  return <> {isTimesUp ? isAuth ? <AuthRoutes /> : <Login /> : <Spinner />} </>;
+  return (
+    <>
+      {isTimesUp && <img src={logoImg} style={{width: "40px", position: "absolute", top: "5px", left: "5px"}} />}
+      {isTimesUp ? isAuth ? <AuthRoutes /> : <Login /> : <Spinner />}
+    </>
+  );
 }

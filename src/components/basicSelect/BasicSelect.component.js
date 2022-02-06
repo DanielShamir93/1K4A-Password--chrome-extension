@@ -10,19 +10,23 @@ export default function BasicSelect({ accounts, accountSelectedName, setAccountS
   return (
     <Box sx={{ width: 400 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">My Accounts</InputLabel>
+        <InputLabel 
+          id="demo-simple-select-label"
+          style={{fontFamily: "Goldman", fontSize: "20px"}}
+        >
+            My Accounts
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={accountSelectedName}
-          style={{fontSize: "30px"}}
+          style={{fontSize: "30px", fontFamily: "Goldman", textAlign: "center"}}
           onChange={(e) => {setAccountSelectedName(e.target.value)}}
         >
-          <MenuItem style={{fontSize: "20px"}} value="select-account">Select Account</MenuItem>
           {accounts.map((account) => {
             return (
               <MenuItem
-                style={{fontSize: "20px"}}
+                style={{fontSize: "20px", fontFamily: "Goldman"}}
                 key={account._id}
                 value={account._id}
               >{`${account.accountName} (${account.accountSubname})`}</MenuItem>

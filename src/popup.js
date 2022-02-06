@@ -1,19 +1,15 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import Spinner from "./components/spinner/Spinner.component";
+import App from "./components/app/app.component";
 import "./styles/normalize.scss";
 import "./styles/reset.scss";
-
-const App = React.lazy(() => import("./components/app/app.component"));
 
 function Popup() {
 
   return (
     <BrowserRouter>
-      <Suspense fallback={<Spinner />}>
-        <App /> 
-      </Suspense>
+      <App /> 
     </BrowserRouter>
   );
 }
