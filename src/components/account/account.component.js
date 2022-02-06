@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FcUnlock, FcLock, FcKey } from "react-icons/fc";
 import { RiFileCopyLine } from "react-icons/ri";
 import { Password } from "keys-to-password";
+import "./account.styles.scss";
 
 export default function Account({ account }) {
-
   const [privateKey, setPrivateKey] = useState("");
   const [output, setOutput] = useState("");
 
@@ -41,10 +41,16 @@ export default function Account({ account }) {
     }
   };
 
+  // Copy outcome password to the clipboard
+  const copyPassword = () => {
+    navigator.clipboard.writeText(output);
+  };
+
   return (
-    <div className="account" >
+    <div className="Account">
       <figure
         className="account-icon"
+        style={account.accountIconStyle}
       ></figure>
       <div className="account-more">
         <div className="private-key">
@@ -75,7 +81,7 @@ export default function Account({ account }) {
             value={output}
             readOnly
           />
-          <RiFileCopyLine className="copy-button" />
+          <RiFileCopyLine className="copy-button" onClick={copyPassword} />
         </div>
       </div>
     </div>

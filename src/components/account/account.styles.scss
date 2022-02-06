@@ -1,0 +1,76 @@
+.Account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vmin;
+  background: #FAE9A4;
+  border: 0.3vmin solid rgb(219, 201, 99);
+  box-shadow: 0 0 0.5vmin black;
+  min-width: 300px;
+  margin-bottom: 50px;
+  height: 250px;
+  border-radius: 2vmin;
+
+  .account-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .private-key {
+      display: flex;
+      align-items: center;
+
+      &-icon {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      &-input {
+        font-size: 1.5rem;
+        padding: 5px 0;
+        border-radius: 1vmin;
+        margin: 10px;
+        border: none;
+        text-align: center;
+        min-width: 250px;
+        box-shadow: 0 0 0.5vmin black;
+      }
+    }
+
+    .get-password-button {
+      font-size: 3rem;
+      padding: 0.5vmin;
+      border: none;
+      border-radius: 1vmin;
+      cursor: pointer;
+    }
+
+    .output {
+      display: flex;
+      align-items: center;
+
+      &-input {
+        font-size: 1.5rem;
+        padding: 5px 0;
+        border-radius: 1vmin;
+        margin: 10px;
+        border: none;
+        box-shadow: 0 0 0.5vmin black;
+        text-align: center;
+        min-width: 250px;
+      }
+
+      .copy-button {
+        font-size: 4vmin;
+        border: none;
+        border-radius: 1vmin;
+        cursor: pointer;
+      }
+
+      .copy-button:active {
+        opacity: 0.5;
+      }
+    }
+  }
+}

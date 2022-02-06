@@ -3,6 +3,7 @@ import myApi from "../../api/Apis";
 import Account from "../account/account.component";
 import BasicButton from "../basicButton/BasicButton.component";
 import BasicSelect from "../basicSelect/BasicSelect.component";
+import "./accountsList.styles.scss";
 
 export default function AccountsList() {
   const [accounts, setAccounts] = useState([]);
@@ -46,7 +47,7 @@ export default function AccountsList() {
             Authorization: `Bearer ${loggedInUser.token}`,
           },
         };
-        
+
         myApi("users/logout", config).then((data) => {
           window.location.reload();
         });
@@ -63,10 +64,22 @@ export default function AccountsList() {
   };
 
   return (
-    <>
-      <BasicButton label="Logout" variant="contained" cb={logout} />
-      <BasicSelect accounts={accounts} accountSelectedName={accountSelectedName} setAccountSelectedName={setAccountSelectedName} />
-      {accountSelectedName !== "select-account" && renderSelectedAccount()}
-    </>
+    <div className="Account-list">
+      <BasicButton
+        className="logout-button"
+        label="Logout"
+        variant="contained"
+        cb={logout}
+      />
+      <div className="accounts-list-content">
+        <BasicSelect
+          className="accounts-dropdown"
+          accounts={accounts}
+          accountSelectedName={accountSelectedName}
+          setAccountSelectedName={setAccountSelectedName}
+        />
+        {accountSelectedName !== "select-account" && renderSelectedAccount()}
+      </div>
+    </div>
   );
 }
