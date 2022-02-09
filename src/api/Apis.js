@@ -1,10 +1,8 @@
 import axios from "axios";
 
-const PORT = 8080;
+let myUrl = "https://one-key-for-all-paswords.herokuapp.com/";
 
-let myUrl = `http://localhost:${PORT}/`;
-
-const myApi = axios.create({
+let myApi = axios.create({
   baseURL: myUrl,
 });
 
