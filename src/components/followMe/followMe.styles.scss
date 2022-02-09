@@ -1,0 +1,30 @@
+.Follow-me {
+
+  .follow-me-icons {
+    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
+    width: 65px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+
+    .linkedin-icon {
+      background-image: url(https://i.ibb.co/H4bjsLF/linkedin.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    .github-icon {
+      background-image: url(https://i.ibb.co/XFv5nHk/github2.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+    }
+  }
+}

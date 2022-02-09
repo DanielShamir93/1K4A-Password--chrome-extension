@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Login from "../login/Login.component";
 import AuthRoutes from "../authRoutes/AuthRoutes.component";
-import myApi from "../../api/Apis";
 import Spinner from "../spinner/Spinner.component";
-import logoImg from '../../assets/images/title_logo.png';
+import FollowMe from "../followMe/FollowMe.component";
+import myApi from "../../api/Apis";
+import "./app.styles.scss";
 
 export default function App() {
   const [isTimesUp, setIsTimesUp] = useState(false);
@@ -36,13 +37,24 @@ export default function App() {
 
     setTimeout(() => {
       setIsTimesUp(true);
-    }, 1000);
+    }, 1500);
   }, []);
 
+  const openMySite = (url) => {
+    chrome.tabs.create({ url });
+  }
+
   return (
-    <>
-      {isTimesUp && <img src={logoImg} style={{width: "40px", position: "absolute", top: "5px", left: "5px"}} />}
+    <div className="App">
+      {isTimesUp && (
+        <img
+          className="logo"
+          src="https://i.ibb.co/Tq5bppS/1-K4-A-Passwords-48.png"
+        />
+      )}
       {isTimesUp ? isAuth ? <AuthRoutes /> : <Login /> : <Spinner />}
-    </>
+      {isTimesUp && <div className="link-to-site" onClick={() => {openMySite("https://one-key-for-all-paswords.herokuapp.com/")}}>1K4A-Passwords.com</div>}
+      {isTimesUp && <FollowMe className="follow-me" openMySite={openMySite}/>}
+    </div>
   );
 }

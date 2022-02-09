@@ -1,6 +1,6 @@
 {
   "name": "1K4A-Passwords",
-  "description": "Generate and recover password via private and public keys",
+  "description": "Generate and recover password via private and public keys.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -11,9 +11,5 @@
     "48": "./icons/1K4A-Passwords-48.png",
    "128": "./icons/1K4A-Passwords-128.png" 
   },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permissions": ["storage"],
-  "host_permissions": ["<all_urls>"]
+  "permissions": ["storage", "tabs"]
 }

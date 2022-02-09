@@ -80,13 +80,12 @@ export default function Login() {
                 login();
                 setTimeout(() => {
                   setComment("Invalid email or password");
-                }, 2000)
+                }, 1200)
               }
             }}
           />
         </div>
         <div className="to-signup">
-          {/* <a className="to-signup-text" type="_blank" href="https://one-key-for-all-paswords.herokuapp.com/">Signup</a> */}
         </div>
       </div>
     </div>

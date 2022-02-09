@@ -20,7 +20,7 @@ export default function BasicSelect({ accounts, accountSelectedName, setAccountS
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={accountSelectedName}
-          style={{fontSize: "30px", fontFamily: "Goldman", textAlign: "center"}}
+          style={{fontSize: "25px", fontFamily: "Goldman", textAlign: "center"}}
           onChange={(e) => {setAccountSelectedName(e.target.value)}}
         >
           {accounts.map((account) => {
