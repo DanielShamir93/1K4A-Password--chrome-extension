@@ -7,8 +7,7 @@ import "./accountsList.styles.scss";
 
 export default function AccountsList() {
   const [accounts, setAccounts] = useState([]);
-  const [accountSelectedName, setAccountSelectedName] =
-    useState("");
+  const [accountSelectedName, setAccountSelectedName] = useState("");
 
   useEffect(() => {
     chrome.storage.sync.get("loggedInUser", function (result) {
@@ -48,7 +47,7 @@ export default function AccountsList() {
           },
         };
 
-        myApi("users/logout", config).then((data) => {
+        myApi("users/logout", config).then(() => {
           window.location.reload();
         });
       } catch (err) {

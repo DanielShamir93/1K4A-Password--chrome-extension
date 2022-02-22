@@ -29,7 +29,7 @@ export default function BasicSelect({ accounts, accountSelectedName, setAccountS
                 style={{fontSize: "20px", fontFamily: "Goldman"}}
                 key={account._id}
                 value={account._id}
-              >{`${account.accountName} (${account.accountSubname})`}</MenuItem>
+              >{account.accountName} {account.accountSubname && ` (${account.accountSubname})`}</MenuItem>
             );
           })}
         </Select>
