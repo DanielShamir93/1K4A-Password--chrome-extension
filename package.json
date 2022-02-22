@@ -1,10 +1,11 @@
 {
   "name": "chrome-ext",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Generate and recover password via private and public keys.",
   "main": "index.js",
   "scripts": {
     "remove-build": "rm -rf dist",
+    "zip-build": "cd dist && zip -r dist.zip ./*",
     "dev-build": "webpack --watch --config webpack.dev.js",
     "prod-build": "webpack --config webpack.prod.js",
     "dev": "concurrently \"npm run remove-build\" \"npm run dev-build\"",
