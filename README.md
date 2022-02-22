@@ -14,7 +14,7 @@ Over the years we have all signed up for many sites and a large percentage of th
 * Password can be modified easily.
 * Option for using patterns to generate passwords.
 
-## Install extension
+## Install 1K4A-Passwords extension
 
 [<img src="https://i.ibb.co/6rk85xy/Chrome.png" alt="Chrome" width="80">](https://chrome.google.com/webstore/detail/1k4a-passwords/kcdjadkakjpbpfdagdohnmpocpbkjhff?utm_source=googleads&utm_medium=adgroup5&utm_campaign=adgroup5&utm_id=adgroup5&gclid=Cj0KCQiAjc2QBhDgARIsAMc3SqR7GlueB0wGYbx-LYBiZ1VIB9aA0UDhlyHY4dtmsS-baQSgM11ZG1IaAgPkEALw_wcB&hl=en) |
 --- |
