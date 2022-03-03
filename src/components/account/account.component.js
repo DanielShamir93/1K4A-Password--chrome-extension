@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FcUnlock, FcLock, FcKey } from "react-icons/fc";
 import { RiFileCopyLine } from "react-icons/ri";
 import { Password } from "keys-to-password";
@@ -7,6 +7,11 @@ import "./account.styles.scss";
 export default function Account({ account }) {
   const [privateKey, setPrivateKey] = useState("");
   const [output, setOutput] = useState("");
+
+  useEffect(() => {
+    setPrivateKey('');
+    setOutput('');
+  }, [account._id])
 
   // Retrieve the password outcome
   const getPassword = () => {
@@ -62,9 +67,7 @@ export default function Account({ account }) {
             id="private-key-input"
             type="password"
             placeholder="Private Key"
-            onChange={(e) => {
-              setPrivateKey(e.target.value);
-            }}
+            onChange={(e) => {setPrivateKey(e.target.value)}}
             value={privateKey}
           />
         </div>

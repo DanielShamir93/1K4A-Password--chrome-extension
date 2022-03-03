@@ -57,22 +57,21 @@ export default function AccountsList() {
   };
 
   const renderSelectedAccount = () => {
-    const account =
-      accounts.find((account) => account._id === accountSelectedName) || [];
+    const account = accounts.find((account) => account._id === accountSelectedName) || [];
     return <Account account={account} />;
   };
 
   return (
-    <div className="Account-list">
+    <div className='Account-list'>
       <BasicButton
-        className="logout-button"
-        label="Logout"
-        variant="contained"
+        className='logout-button'
+        label='Logout'
+        variant='contained'
         cb={logout}
       />
-      <div className="accounts-list-content">
+      <div className='accounts-list-content'>
         <BasicSelect
-          className="accounts-dropdown"
+          className='accounts-dropdown'
           accounts={accounts}
           accountSelectedName={accountSelectedName}
           setAccountSelectedName={setAccountSelectedName}
